@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form name="user" method="post" action="/UserServlet">
+	<form method="post" action="/UpdateUser">
 		<div class="control-group">
 			<label class="control-label" for="userId">사용자 아이디</label>
 			<div class="controls">
@@ -34,7 +34,7 @@
 		</div>
 		<div class="control-group">
 			<div class="controls">
-				<button type ="submit" class="btn btn-primary">회원가입</button>
+				<button type ="submit" class="btn btn-primary">수정</button>
 			</div>
 		</div>
 	</form>
