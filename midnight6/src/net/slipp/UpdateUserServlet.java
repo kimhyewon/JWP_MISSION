@@ -17,7 +17,12 @@ public class UpdateUserServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/updateForm.jsp").forward(req,  resp);
+		Object userId = req.getSession().getAttribute("userId");
+		if(userId != null) {
+			req.getRequestDispatcher("/WEB-INF/updateForm.jsp").forward(req,  resp);
+		} else {
+			req.getRequestDispatcher("/WEB-INF/index.jsp").forward(req,  resp);
+		}
 	}
 	
 	@Override
