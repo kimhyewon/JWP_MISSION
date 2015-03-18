@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.apache.catalina.startup.Tomcat"/>
-<fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-<fullyQualifiedTypeName name="net.slipp.user.User"/>
-<fullyQualifiedTypeName name="net.model.User"/>
-<fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
-</qualifiedTypeNameHistroy>
