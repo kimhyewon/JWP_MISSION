@@ -7,3 +7,9 @@ lib
 tomcat.*
 Servers
 *.class
+.DS_Store
+.lock
+.log
+.mylyn
+.plugins
+version.ini
