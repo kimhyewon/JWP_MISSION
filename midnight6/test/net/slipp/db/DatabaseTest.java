@@ -11,14 +11,14 @@ public class DatabaseTest {
 	@Test
 	//디비에 데이터 추가한 다음 사용자 정보를 조회해오기
 	public void addAndFind() {
-		Database.addUser(TEST_USER);
-		User dbUser = Database.findByUserId(TEST_USER.getUserId());
+		Database2.addUser(TEST_USER);
+		User dbUser = Database2.findByUserId(TEST_USER.getUserId());
 		assertEquals(TEST_USER, dbUser);
 	}
 	
 	//디비에 사용자가 존재하지 않을 때 테스트 
 	public void addAndFindWhenNotExisted() {
-		User dbUser = Database.findByUserId("userId2");
+		User dbUser = Database2.findByUserId("userId2");
 		assertNull(dbUser);
 	}
 	

@@ -1,7 +1,7 @@
 package net.slipp.user;
 
 import static org.junit.Assert.*;
-import net.slipp.db.Database;
+import net.slipp.db.Database2;
 
 import org.junit.Test;
 
@@ -23,7 +23,7 @@ public class UserTest {
 	@Test
 	public void login() throws Exception {
 		User user = UserTest.TEST_USER;
-		Database.addUser(user);
+		Database2.addUser(user);
 		assertTrue(User.login(TEST_USER.getUserId(), TEST_USER.getPassword()));
 	}
 	
@@ -35,7 +35,7 @@ public class UserTest {
 	@Test(expected=PasswordMismatchException.class)
 	public void loginWhenPasswordMismatch() throws Exception {
 		User user = UserTest.TEST_USER;
-		Database.addUser(user);
+		Database2.addUser(user);
 		User.login(TEST_USER.getUserId(), "password2");
 	}
 }

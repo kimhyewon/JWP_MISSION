@@ -1,7 +1,8 @@
-package net.slipp;
+package net.slipp.user;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,15 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.slipp.db.Database;
-import net.slipp.user.User;
+import net.slipp.db.Database2;
 
-@WebServlet("/users/save")
-public class CreateUserServlet extends HttpServlet {
+@WebServlet("/users/update")
+public class UpdateUserServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/createUserForm.jsp").forward(req,  resp);
+		Object userId = req.getSession().getAttribute("userId");
+		if(userId != null) {
+			req.getRequestDispatcher("/WEB-INF/updateForm.jsp").forward(req,  resp);
+		} else {
+			req.getRequestDispatcher("/WEB-INF/index.jsp").forward(req,  resp);
+		}
 	}
 	
 	@Override
@@ -29,20 +34,14 @@ public class CreateUserServlet extends HttpServlet {
 		String email = req.getParameter("email");
 		
 		User user = new User(userId, password, name, email);
-		Database.addUser(user);
+//		Database.updateUser(user); //데이터베이스가 필요 없어졌기 때문에 밑 코드로 대체 
+		UserDAO userDao = new UserDAO();
+		try {
+			userDao.updateUser(user);
+		} catch (SQLException e) {
+			
+		}
 		
 		resp.sendRedirect("/");
-		
-//		PrintWriter out = resp.getWriter();
-//		out.println("<html>");
-//		out.println("<head>");
-//		out.println("</head>");
-//		out.println("<body>");
-//		out.println("<h1>" + userId + "</h1>");
-//		out.println("<h1>" + password+ "</h1>");
-//		out.println("<h1>" + name + "</h1>");
-//		out.println("<h1>" + email + "</h1>");
-//		out.println("</body>");
-//		out.println("</html>");
 	}
 }

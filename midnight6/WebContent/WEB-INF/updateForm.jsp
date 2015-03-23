@@ -37,7 +37,7 @@
 		</div>
 		<div class="control-group">
 			<div class="controls">
-				<button type ="submit" class="btn btn-primary">회원가입</button>
+				<button type ="submit" class="btn btn-primary">수정완료</button>
 			</div>
 		</div>
 	</form>
