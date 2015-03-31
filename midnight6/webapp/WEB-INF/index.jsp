@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form class="form_horizontal" method="get" action="/">
+<!-- 	<form class="form_horizontal" method="get" action="/"> 이 부분 없어도 동작한다--> 
 	
 	<c:set var="userId" scope="session" value="${userId}"/>
 	<%-- <c:set var="userId" value="${sessionScope.userId}"/> --%>
