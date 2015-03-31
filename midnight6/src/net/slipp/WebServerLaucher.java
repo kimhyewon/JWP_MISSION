@@ -10,7 +10,7 @@ import org.apache.catalina.startup.Tomcat;
 public class WebServerLaucher  {
 	public static void main(String[] args) throws Exception {
 
-        String webappDirLocation = "WebContent/";
+        String webappDirLocation = "webapp/";
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(8030);
 
@@ -21,9 +21,4 @@ public class WebServerLaucher  {
         tomcat.getServer().await();
         
     }
-//	@Override
-//	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-//			throws ServletException, IOException {
-//		req.getRequestDispatcher("/index.jsp").forward(req,  resp);
-//	}
 }

@@ -40,6 +40,15 @@
 				<button type ="submit" class="btn btn-primary">수정완료</button>
 			</div>
 		</div>
-	</form>
+	</form>	
+	
+	<form class="form-horizontal" action="/user/delete" method="post">	
+		<div class="control-group">
+			<div class="controls">
+				<button type ="submit" class="btn btn-primary">회원탈퇴</button>
+			</div>
+		</div>
+	</form>	
+	
 </body>
 </html>
